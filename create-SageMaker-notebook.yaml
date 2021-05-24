@@ -49,7 +49,7 @@ Resources:
       NotebookInstanceName: !Ref NotebookName
       RoleArn: !GetAtt SageMakerIamRole.Arn
       VolumeSizeInGB: !Ref VolumeSize
-      LifecycleConfigName: !GetAtt AmazonPersonalizeMLOpsLifecycleConfig.NotebookInstanceLifecycleConfigName
+      LifecycleConfigName: !GetAtt AmazonSageMakerMLOpsLifecycleConfig.NotebookInstanceLifecycleConfigName
 
 
   AmazonSageMakerMLOpsLifecycleConfig:
@@ -62,7 +62,7 @@ Resources:
                 #!/bin/bash
                 sudo -u ec2-user -i <<'EOF'
                 cd /home/ec2-user/SageMaker/
-                git clone https://czlaughlin404/sagemaker-tensorflow-keras-human-activity-recognition
+                git clone https://github.com/czlaughlin404/sagemaker-tensorflow-keras-human-activity-recognition
                 #cd /home/ec2-user/SageMaker/amazon-personalize-immersion-day/automation/ml_ops/
-                #nohup sh deploy.sh "${SAMArtifactsBucket}" "${domain}" &
+                #nohup sh deploy.sh "${SAMArtifactsBucket}"  &
                 EOF
