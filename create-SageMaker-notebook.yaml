@@ -62,7 +62,9 @@ Resources:
                 #!/bin/bash
                 sudo -u ec2-user -i <<'EOF'
                 cd /home/ec2-user/SageMaker/
-                git clone https://github.com/czlaughlin404/sagemaker-tensorflow-keras-human-activity-recognition
-                #cd /home/ec2-user/SageMaker/amazon-personalize-immersion-day/automation/ml_ops/
-                #nohup sh deploy.sh "${SAMArtifactsBucket}"  &
+                git clone https://github.com/czlaughlin404/sagemaker-human-activity-recognition
+                cd /home/ec2-user/SageMaker/sagemaker-human-activity-recognition/data
+                unzip train_ts1.zip train_ts2.zip test_ts.zip
+                cat train_ts1.csv train_ts2.csv > train_ts.csv
+                rm train_ts1.csv train_ts2.csv
                 EOF
