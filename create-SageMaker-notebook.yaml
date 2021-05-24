@@ -68,7 +68,7 @@ Resources:
             Fn::Base64: 
               !Sub |
                 #!/bin/bash
-                sudo -u ec2-user -i <<'EOF'
+                sudo -u ec2-user -i << EOF
                 cd /home/ec2-user/SageMaker/
                 git clone https://github.com/czlaughlin404/sagemaker-human-activity-recognition
                 cd /home/ec2-user/SageMaker/sagemaker-human-activity-recognition/data
