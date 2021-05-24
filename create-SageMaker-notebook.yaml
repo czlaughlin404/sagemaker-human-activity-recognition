@@ -16,11 +16,19 @@ Parameters:
     MaxValue: 16384
     ConstraintDescription: Must be an integer between 5 (GB) and 16384 (16 TB).
     Description: Enter the size of the EBS volume in GB.
+
+  S3BucketName:
+    Type: String
+    Description: "S3 bucket to create."
+    AllowedPattern: "[a-zA-Z][a-zA-Z0-9_-]*"
     
 
 Resources:
   SAMArtifactsBucket:
     Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref S3BucketName
+
   # SageMaker Execution Role
   SageMakerIamRole:
     Type: "AWS::IAM::Role"
