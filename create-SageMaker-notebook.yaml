@@ -76,3 +76,4 @@ Resources:
                 cat train_ts1.csv train_ts2.csv > train_ts.csv
                 rm train_ts1.csv train_ts2.csv
                 EOF
+
