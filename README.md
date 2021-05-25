@@ -4,14 +4,20 @@ This project demonstrates using the Amazon SageMaker platform to ingest multi-va
 
 The inspiration for this project originates in a public dataset available at https://www.kaggle.com/malekzadeh/motionsense-dataset.  Originally, the dataset input exists as 360 comma-separated files within a nested A_DeviceMotion_data ZIP archive.  First level folders in the archive contain folders that indicate the activity performed.  Next level folders contain recordings by trial individuals who were wearing a device that collected acceleromater and gyroscope measurements, sampled at 50 Hz (e.g. measurements per second).
 
-The original CSV files contain 12 time-series measures: 
-- attitude.roll, attitude.pitch, attitude.yaw
-- gravity.x, gravity.y, gravity.z, 
-- rotationRate.x, rotationRate.y, rotationRate.z, 
-- userAcceleration.x, userAcceleration.y, userAcceleration.z
+The original CSV files contain 12 time-series measures produced by the gyrometers and accelerometers worn by the trial participants: attitude.roll, attitude.pitch, attitude.yaw, gravity.x, gravity.y, gravity.z, rotationRate.x, rotationRate.y, rotationRate.z, userAcceleration.x, userAcceleration.y, userAcceleration.z
 
-Activity classes in include:
-downstairs, upstairs, sitting, standing, walking, jogging
+Each set of recorded trial data is labeled implicitly by being part of a CSV in the ZIP file.  
+
+Activity classes in include: downstairs, upstairs, sitting, standing, walking, jogging
+
+These charts are an oversimplified example of different patterns seen in one of the features, the attitude.roll variable.  This project will demonstrate the use of various ML algorithms to predict the correct activity.
+
+![downstairs](./assets/downstairs.png)
+![upstairs](./assets/upstairs.png)
+![walking](./assets/walking.png)
+![jogging](./assets/jogging.png)
+![standing](./assets/standing.png)
+![sitting](./assets/sitting.png)
 
 This project has pre-processed the 360 CSV files and makes them available for use in a SageMaker notebook, which is automatically created when you follow the steps in "Getting Started".
 
