@@ -48,5 +48,5 @@ This will include deleting any running SageMaker Endpoint created.  Use CloudFor
 
 
 
-#License & Contributing
+# License & Contributing
 The contents of this workshop are licensed under GNU General Public License v3.0.  Content is free and open use and without warranty or liability as described in the GNU terms.
